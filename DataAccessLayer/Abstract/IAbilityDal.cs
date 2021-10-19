@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAbility
+    public interface IAbilityDal
     {
 
         List<Ability> ListAllAbility();
