@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-   public interface IExperienceDal
+   public interface IExperienceDal:IGenericDal<Experience>
     {
-        List<Experience> ListAllExperience();
-        void AddExperience(Experience experience);
-        void DeleteExperience(Experience experience);
-        void UpdateExperience(Experience experience);
-        Experience GetByID(int id);
+        //List<Experience> ListAllExperience();
+        //void AddExperience(Experience experience);
+        //void DeleteExperience(Experience experience);
+        //void UpdateExperience(Experience experience);
+        //Experience GetByID(int id);
 
     }
 }

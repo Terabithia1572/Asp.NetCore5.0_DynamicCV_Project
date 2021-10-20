@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IEducationDal
+    public interface IEducationDal:IGenericDal<Education>
     {
-        List<Education> ListAllEducation();
-        void AddEducation(Education education);
-        void DeleteEducation(Education education);
-        void UpdateEducation(Education education);
-        Education GetByID(int id);
+        //List<Education> ListAllEducation();
+        //void AddEducation(Education education);
+        //void DeleteEducation(Education education);
+        //void UpdateEducation(Education education);
+        //Education GetByID(int id);
     }
 }

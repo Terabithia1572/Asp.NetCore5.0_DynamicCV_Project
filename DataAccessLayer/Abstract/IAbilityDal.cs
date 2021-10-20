@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAbilityDal
+    public interface IAbilityDal:IGenericDal<Ability>
     {
 
-        List<Ability> ListAllAbility();
-        void AddAbility(Ability ability);
-        void DeleteAbility(Ability ability);
-        void UpdateAbility(Ability ability);
-        Ability GetByID(int id);
+        //List<Ability> ListAllAbility();
+        //void AddAbility(Ability ability);
+        //void DeleteAbility(Ability ability);
+        //void UpdateAbility(Ability ability);
+        //Ability GetByID(int id);
     }
 }

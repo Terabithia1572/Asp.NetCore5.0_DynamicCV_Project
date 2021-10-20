@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IMyHobbiesDal
+    public interface IMyHobbiesDal:IGenericDal<MyHobby>
     {
-        List<MyHobby> ListAllMyHobby();
-        void AddMyHobby(MyHobby myHobby);
-        void DeleteMyHobby(MyHobby myHobby);
-        void UpdateMyHobby(MyHobby myHobby);
-        MyHobby GetByID(int id);
+        //List<MyHobby> ListAllMyHobby();
+        //void AddMyHobby(MyHobby myHobby);
+        //void DeleteMyHobby(MyHobby myHobby);
+        //void UpdateMyHobby(MyHobby myHobby);
+        //MyHobby GetByID(int id);
     }
 }

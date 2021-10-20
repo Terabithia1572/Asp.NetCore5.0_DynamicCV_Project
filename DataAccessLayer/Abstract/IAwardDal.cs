@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-   public interface IAwardDal
+   public interface IAwardDal:IGenericDal<Award>
     {
-        List<Award> ListAllAward();
-        void AddAward(Award award);
-        void DeleteAward(Award award);
-        void UpdateAward(Award award);
-        Award GetByID(int id); 
+        //List<Award> ListAllAward();
+        //void AddAward(Award award);
+        //void DeleteAward(Award award);
+        //void UpdateAward(Award award);
+        //Award GetByID(int id); 
     }
 }
