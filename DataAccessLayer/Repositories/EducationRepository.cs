@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(Education t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteEducation(Education education)
         {
             c.Remove(education);
@@ -29,9 +34,24 @@ namespace DataAccessLayer.Repositories
             return c.Educations.Find(id);
         }
 
+        public List<Education> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Education t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Education> ListAllEducation()
         {
             return c.Educations.ToList();
+        }
+
+        public void Update(Education t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateEducation(Education education)

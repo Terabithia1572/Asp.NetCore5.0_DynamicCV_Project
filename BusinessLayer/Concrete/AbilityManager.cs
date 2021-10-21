@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
-using DataAccessLayer.Repositories;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,31 +12,36 @@ namespace BusinessLayer.Concrete
 {
     public class AbilityManager : IAbilityService
     {
-        AbilityRepository abilityRepository = new AbilityRepository();
+        IAbilityDal _abilityDal;
+
+        public AbilityManager(IAbilityDal abilityDal)
+        {
+            _abilityDal = abilityDal;
+        }
+
         public void AbilityAdd(Ability ability)
         {
-            abilityRepository.AddAbility(ability);
-            
+            _abilityDal.Insert(ability);
         }
 
         public void AbilityDelete(Ability ability)
         {
-            throw new NotImplementedException();
+            _abilityDal.Delete(ability);
         }
 
         public void AbilityUpdate(Ability ability)
         {
-            throw new NotImplementedException();
+            _abilityDal.Update(ability);
         }
 
         public Ability GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _abilityDal.GetByID(id);
         }
 
         public List<Ability> GetList()
         {
-            throw new NotImplementedException();
+            return _abilityDal.GetListAll();
         }
     }
 }

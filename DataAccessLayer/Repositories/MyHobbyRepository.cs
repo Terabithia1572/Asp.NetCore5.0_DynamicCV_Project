@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(MyHobby t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteMyHobby(MyHobby myHobby)
         {
             c.Remove(myHobby);
@@ -29,9 +34,24 @@ namespace DataAccessLayer.Repositories
             return c.MyHobbies.Find(id);
         }
 
+        public List<MyHobby> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(MyHobby t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<MyHobby> ListAllMyHobby()
         {
             return c.MyHobbies.ToList();
+        }
+
+        public void Update(MyHobby t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateMyHobby(MyHobby myHobby)

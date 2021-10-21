@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(Award t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteAward(Award award)
         {
             c.Remove(award);
@@ -29,9 +34,24 @@ namespace DataAccessLayer.Repositories
             return c.Awards.Find(id);
         }
 
+        public List<Award> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Award t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Award> ListAllAward()
         {
             return c.Awards.ToList();
+        }
+
+        public void Update(Award t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateAward(Award award)

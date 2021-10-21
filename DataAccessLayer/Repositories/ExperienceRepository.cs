@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(Experience t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteExperience(Experience experience)
         {
             c.Remove(experience);
@@ -30,9 +35,24 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public List<Experience> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Experience t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Experience> ListAllExperience()
         {
             return c.Experiences.ToList();
+        }
+
+        public void Update(Experience t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateExperience(Experience experience)

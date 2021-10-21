@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
+        public void Delete(Ability t)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteAbility(Ability ability)
         {
             c.Remove(ability);
@@ -29,9 +34,24 @@ namespace DataAccessLayer.Repositories
             return c.Abilities.Find(id);
         }
 
+        public List<Ability> GetListAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Insert(Ability t)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Ability> ListAllAbility()
         {
             return c.Abilities.ToList();
+        }
+
+        public void Update(Ability t)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateAbility(Ability ability)
