@@ -19,19 +19,14 @@ namespace BusinessLayer.Concrete
             _abilityDal = abilityDal;
         }
 
-        public void AbilityAdd(Ability ability)
+        public void Add(Ability t)
         {
-            _abilityDal.Insert(ability);
+            _abilityDal.Insert(t);
         }
 
-        public void AbilityDelete(Ability ability)
+        public void Delete(Ability t)
         {
-            _abilityDal.Delete(ability);
-        }
-
-        public void AbilityUpdate(Ability ability)
-        {
-            _abilityDal.Update(ability);
+            _abilityDal.Delete(t);
         }
 
         public Ability GetByID(int id)
@@ -39,9 +34,19 @@ namespace BusinessLayer.Concrete
             return _abilityDal.GetByID(id);
         }
 
+        public Ability GetById(int id)
+        {
+            return _abilityDal.GetByID(id);
+        }
+
         public List<Ability> GetList()
         {
             return _abilityDal.GetListAll();
+        }
+
+        public void Update(Ability t)
+        {
+            _abilityDal.Update(t);
         }
     }
 }
