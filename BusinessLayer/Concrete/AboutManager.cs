@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using System;
@@ -11,56 +12,36 @@ namespace BusinessLayer.Concrete
 {
     public class AboutManager : IAboutService
     {
-        AboutRepository aboutRepository = new AboutRepository();
+        IAboutDal _aboutDal;
 
-        public AboutManager(AboutRepository aboutRepository)
+        public AboutManager(IAboutDal aboutDal)
         {
-            this.aboutRepository = aboutRepository;
+            _aboutDal = aboutDal;
         }
 
         public void Add(About t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddAbout(About about)
-        {
-            aboutRepository.AddAbout(about);
+            _aboutDal.Insert(t);
         }
 
         public void Delete(About t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteAbout(About about)
-        {
-            throw new NotImplementedException();
-        }
-
-        public About GetByID(int id)
-        {
-            throw new NotImplementedException();
+            _aboutDal.Delete(t);
         }
 
         public About GetById(int id)
         {
-            throw new NotImplementedException();
+            return _aboutDal.GetByID(id);
         }
 
         public List<About> GetList()
         {
-            throw new NotImplementedException();
+            return _aboutDal.GetListAll();
         }
 
         public void Update(About t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateAbout(About about)
-        {
-            throw new NotImplementedException();
+            _aboutDal.Update(t);
         }
     }
 }

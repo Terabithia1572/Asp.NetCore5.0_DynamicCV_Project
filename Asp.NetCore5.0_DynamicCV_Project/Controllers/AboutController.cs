@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
 {
     public class AboutController : Controller
     {
-        AboutManager aboutManager = new AboutManager();
+        AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
             var values = aboutManager.GetList();

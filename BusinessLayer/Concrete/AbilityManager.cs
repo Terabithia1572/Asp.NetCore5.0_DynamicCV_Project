@@ -1,6 +1,5 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -27,11 +26,6 @@ namespace BusinessLayer.Concrete
         public void Delete(Ability t)
         {
             _abilityDal.Delete(t);
-        }
-
-        public Ability GetByID(int id)
-        {
-            return _abilityDal.GetByID(id);
         }
 
         public Ability GetById(int id)
