@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<About> 
+@model List<About>  
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/UserLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
@@ -10,7 +10,7 @@
         @foreach (var item in Model)
         {
 
-        
+
         <h1 class="mb-0">
             @item.Name
             <span class="text-primary">@item.SurName</span>
@@ -37,3 +37,4 @@
         }
     </div>
 </section>
+

@@ -14,6 +14,8 @@ namespace EntityLayer.Concrete
 
         [StringLength(100)]
         public string Title { get; set; }
+        [StringLength(3000)]
+        public string Content { get; set; }
         public string Date { get; set; }
 
     }
