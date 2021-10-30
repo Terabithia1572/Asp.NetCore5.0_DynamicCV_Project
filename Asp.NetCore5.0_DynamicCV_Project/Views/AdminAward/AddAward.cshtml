@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete
+@model Award 
+@{
+    ViewData["Title"] = "AddAward";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<h2>Ödül/Başarı Ekleme Sayfası</h2>
+<br />
+<form method="post" asp-controller="AdminAward" asp-action="AddAward">
+
+    <div class="form-group">
+        <label asp-for="AwardName"> <b>Yetenek</b></label>
+        <input asp-for="AwardName" class="form-control" />
+
+        <span asp-validation-for="AwardName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-outline-primary"><b>Ekle</b></button>
+</form>
+
+
