@@ -1,0 +1,22 @@
+﻿@model Ability
+@{
+    ViewData["Title"] = "UpdateAbility";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Profil Düzenleme Sayfası</h2>
+<br />
+<form method="post" asp-controller="AdminAbility" asp-action="UpdateAbility">
+    <input type="hidden" name="AbilityId" value="@Model.AbilityId" />
+    <div class="form-group">
+        <label asp-for="MyAbility"> <b>Yetenek:</b></label>
+        <input asp-for="MyAbility" class="form-control" value="@Model.MyAbility" />
+        @*<span asp-validation-for="CName" class="text-danger"></span>*@
+    </div>
+
+
+    <button type="submit" class="btn btn-outline-success"><b>Değişiklikleri Kaydet</b></button>
+</form>
+
+

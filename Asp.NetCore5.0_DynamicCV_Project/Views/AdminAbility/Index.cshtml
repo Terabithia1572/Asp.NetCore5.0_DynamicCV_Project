@@ -1,5 +1,4 @@
-﻿
-@model List<Award>
+﻿@model List<Ability>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -17,12 +16,12 @@
     @foreach (var item in Model)
     {
 <tr>
-    <th>@item.AwardId</th>
-    <th>@item.AwardName</th>
+    <th>@item.AbilityId</th>
+    <th>@item.MyAbility</th>
 
 
 
-    <td><a href="/AdminAward/AwardUpdate/@item.AwardId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+    <td><a href="/AdminAbility/UpdateAbility/@item.AbilityId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
 
 
 
@@ -30,6 +29,8 @@
 
 </table>
 <br />
-<a href="/AdminAward/AddAward" class="btn btn-outline-dark"> <b>Ödül Ekle</b></a>
+<a href="/AdminAbility/AddAbility" class="btn btn-outline-dark"> <b>Yetenek Ekle</b></a>
 <br />
+
+
 

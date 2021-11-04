@@ -1,6 +1,6 @@
 ﻿@model List<Education>
 @{ ViewData["Title"] = "Index";
-                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
 <br />
 <table class="table table-hover">
@@ -19,20 +19,21 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <th>@item.EducationId</th>
-    <th>@item.SubTitle</th>
-    <td>@item.Title</td>
+        <tr>
+            <th>@item.EducationId</th>
+            <th>@item.SubTitle</th>
+            <td>@item.Title</td>
 
-    <th>@item.NoteAverage</th>
-    <td>@item.Date</td>
-
-
-    <td><a href="/AdminEducation/EducationUpdate/@item.EducationId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+            <th>@item.NoteAverage</th>
+            <td>@item.Date</td>
 
 
+            <td><a href="/AdminEducation/EducationUpdate/@item.EducationId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
 
-</tr>}
+
+
+        </tr>
+}
 
 </table>
 <br />
