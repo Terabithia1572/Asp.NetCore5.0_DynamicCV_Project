@@ -1,0 +1,21 @@
+﻿@model MyHobby
+@{
+    ViewData["Title"] = "HobbyUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Profil Düzenleme Sayfası</h2>
+<br />
+<form method="post" asp-controller="AdminMyHobby" asp-action="HobbyUpdate">
+    <input type="hidden" name="HobbyId" value="@Model.HobbyId" />
+    <div class="form-group">
+        <label asp-for="Hobby"> <b>Hobi:</b></label>
+        <input asp-for="Hobby" class="form-control" value="@Model.Hobby" />
+        @*<span asp-validation-for="CName" class="text-danger"></span>*@
+    </div>
+
+
+    <button type="submit" class="btn btn-outline-success"><b>Değişiklikleri Kaydet</b></button>
+</form>
+

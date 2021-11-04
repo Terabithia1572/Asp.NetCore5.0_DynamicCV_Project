@@ -1,0 +1,49 @@
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
+{
+    public class AdminMyHobbyController : Controller
+    {
+        MyHobbyManager myHobbyManager = new MyHobbyManager(new EfMyHobbyRepository());
+        public IActionResult Index()
+        {
+            var value = myHobbyManager.GetList();
+            return View(value);
+        }
+
+        [HttpGet]
+        public IActionResult HobbyUpdate(int id)
+        {
+            var value = myHobbyManager.GetById(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public IActionResult HobbyUpdate(MyHobby t)
+        {
+            myHobbyManager.Update(t);
+            return RedirectToAction("Index", "MyHobby");
+        }
+
+        [HttpGet]
+        public IActionResult AddHobby()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddHobby(MyHobby t)
+        {
+            myHobbyManager.Add(t);
+            return RedirectToAction("Index", "MyHobby");
+        }
+    }
+}
