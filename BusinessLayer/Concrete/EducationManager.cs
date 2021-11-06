@@ -18,14 +18,14 @@ namespace BusinessLayer.Concrete
             _educationDal = educationDal;
         }
 
-        public void Add(Education t)
+        public void Add(Education education)
         {
-            _educationDal.Insert(t);
+            _educationDal.Insert(education);
         }
 
-        public void Delete(Education t)
+        public void Delete(Education education)
         {
-            _educationDal.Delete(t);
+            _educationDal.Delete(education);
         }
 
         public Education GetById(int id)
@@ -38,9 +38,9 @@ namespace BusinessLayer.Concrete
             return _educationDal.GetListAll();
         }
 
-        public void Update(Education t)
+        public void Update(Education education)
         {
-            _educationDal.Update(t); 
+            _educationDal.Update(education);
         }
     }
 }

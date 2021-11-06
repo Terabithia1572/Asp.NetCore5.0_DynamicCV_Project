@@ -13,19 +13,14 @@ namespace BusinessLayer.Concrete
     {
         IExperienceDal _experienceDal;
 
-        public ExperienceManager(IExperienceDal experienceDal)
+        public void Add(Experience experience)
         {
-            _experienceDal = experienceDal;
+            _experienceDal.Insert(experience);
         }
 
-        public void Add(Experience t)
+        public void Delete(Experience experience)
         {
-            _experienceDal.Insert(t);
-        }
-
-        public void Delete(Experience t)
-        {
-            _experienceDal.Delete(t);
+            _experienceDal.Delete(experience);
         }
 
         public Experience GetById(int id)
@@ -38,9 +33,9 @@ namespace BusinessLayer.Concrete
             return _experienceDal.GetListAll();
         }
 
-        public void Update(Experience t)
+        public void Update(Experience experience)
         {
-            _experienceDal.Update(t);
+            _experienceDal.Update(experience);
         }
     }
 }

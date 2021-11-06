@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-   public interface IMyHobbyService:IGenericService<MyHobby>
+   public interface IMyHobbyService
     {
+        void Add(MyHobby myHobby);
+        void Delete(MyHobby myHobby);
+        void Update(MyHobby myHobby);
+        List<MyHobby> GetList();
+        MyHobby GetById(int id);
     }
 }

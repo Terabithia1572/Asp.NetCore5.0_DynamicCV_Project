@@ -8,16 +8,26 @@
 <br />
 <h2>Profil Düzenleme Sayfası</h2>
 <br />
-<form method="post" asp-controller="AdminAward" asp-action="AwardUpdate">
-    <input type="hidden" name="AwardId" value="@Model.AwardId" />
+<!--<form method="post" asp-controller="AdminAward" asp-action="AwardUpdate">
+    <input type="hidden" name="AwardId" value=" />
     <div class="form-group">
         <label asp-for="AwardName"> <b>Ödül:</b></label>
-        <input asp-for="AwardName" class="form-control" value="@Model.AwardName" />
-        @*<span asp-validation-for="CName" class="text-danger"></span>*@
-    </div>
+        <input asp-for="AwardName" class="form-control" value="" />-->
+@*<span asp-validation-for="CName" class="text-danger"></span>*@
+<!--</div>
 
 
     <button type="submit" class="btn btn-outline-success"><b>Değişiklikleri Kaydet</b></button>
-</form>
+</form>-->
+
+@using (Html.BeginForm("AwardUpdate", "AdminAwardController", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.AwardId)
+        @Html.TextBoxFor(x => x.AwardId, new { @class = "form-control" })
+    </div>
+
+    <button class="btn btn-warning">Güncelle</button>
+}
 
 

@@ -18,14 +18,14 @@ namespace BusinessLayer.Concrete
             _myHobbiesDal = myHobbiesDal;
         }
 
-        public void Add(MyHobby t)
+        public void Add(MyHobby myHobby)
         {
-            _myHobbiesDal.Insert(t);
+            _myHobbiesDal.Insert(myHobby);
         }
 
-        public void Delete(MyHobby t)
+        public void Delete(MyHobby myHobby)
         {
-            _myHobbiesDal.Delete(t);
+            _myHobbiesDal.Delete(myHobby);
         }
 
         public MyHobby GetById(int id)
@@ -38,9 +38,9 @@ namespace BusinessLayer.Concrete
             return _myHobbiesDal.GetListAll();
         }
 
-        public void Update(MyHobby t)
+        public void Update(MyHobby myHobby)
         {
-            _myHobbiesDal.Update(t);
+            _myHobbiesDal.Update(myHobby);
         }
     }
 }

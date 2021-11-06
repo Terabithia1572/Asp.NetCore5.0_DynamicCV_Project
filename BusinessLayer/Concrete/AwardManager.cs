@@ -18,19 +18,19 @@ namespace BusinessLayer.Concrete
             _awardDal = awardDal;
         }
 
-        public void Add(Award t)
+        public void Add(Award award)
         {
-            _awardDal.Insert(t);
+            _awardDal.Insert(award);
         }
 
-        public void Delete(Award t)
+        public void Delete(Award award)
         {
-            _awardDal.Delete(t);
+            _awardDal.Delete(award);
         }
 
         public Award GetById(int id)
         {
-           return _awardDal.GetByID(id);
+            return _awardDal.GetByID(id);
         }
 
         public List<Award> GetList()
@@ -38,9 +38,9 @@ namespace BusinessLayer.Concrete
             return _awardDal.GetListAll();
         }
 
-        public void Update(Award t)
+        public void Update(Award award)
         {
-            _awardDal.Update(t);
+            _awardDal.Update(award);
         }
     }
 }
