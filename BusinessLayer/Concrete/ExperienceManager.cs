@@ -13,6 +13,11 @@ namespace BusinessLayer.Concrete
     {
         IExperienceDal _experienceDal;
 
+        public ExperienceManager(IExperienceDal experienceDal)
+        {
+            _experienceDal = experienceDal;
+        }
+
         public void Add(Experience experience)
         {
             _experienceDal.Insert(experience);

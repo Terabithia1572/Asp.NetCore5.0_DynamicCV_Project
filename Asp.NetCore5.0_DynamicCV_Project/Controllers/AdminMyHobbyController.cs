@@ -26,9 +26,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult HobbyUpdate(MyHobby t)
+        public IActionResult HobbyUpdate(MyHobby myHobby)
         {
-            myHobbyManager.Update(t);
+            myHobbyManager.Update(myHobby);
             return RedirectToAction("Index", "MyHobby");
         }
 
@@ -40,9 +40,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddHobby(MyHobby t)
+        public IActionResult AddHobby(MyHobby myHobby)
         {
-            myHobbyManager.Add(t);
+            myHobbyManager.Add(myHobby);
             return RedirectToAction("Index", "MyHobby");
         }
     }

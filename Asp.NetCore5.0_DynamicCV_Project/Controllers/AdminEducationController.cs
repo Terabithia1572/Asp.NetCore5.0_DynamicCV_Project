@@ -26,9 +26,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult EducationUpdate(Education t)
+        public IActionResult EducationUpdate(Education education)
         {
-            educationManager.Update(t);
+            educationManager.Update(education);
             return RedirectToAction("Index", "Education");
         }
 
@@ -40,9 +40,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddEducation(Education t)
+        public IActionResult AddEducation(Education education)
         {
-            educationManager.Add(t);
+            educationManager.Add(education);
             return RedirectToAction("Index", "Education");
         }
     }

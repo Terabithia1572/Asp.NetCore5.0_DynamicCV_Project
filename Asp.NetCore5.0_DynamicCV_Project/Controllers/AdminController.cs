@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules.FluentValidation;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -12,23 +13,27 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
     public class AdminController : Controller
     {
         AboutManager aboutManager = new AboutManager(new EfAboutRepository());
+        AdminAboutValidator validationRules = new AdminAboutValidator();
+
+
         public IActionResult AboutIndex()
         {
-            var values = aboutManager.GetList();
-            return View();
+            var deger = aboutManager.GetList();
+            return View(deger);
         }
+
         [HttpGet]
         public IActionResult AboutUpdate(int id)
         {
-            var values = aboutManager.GetById(id);
-            return View(values);
+            var value = aboutManager.GetByID(id);
+            return View(value);
         }
 
         [HttpPost]
-        public IActionResult AboutUpdate(About t)
+        public IActionResult AboutUpdate(About about)
         {
 
-            aboutManager.Update(t);
+            aboutManager.UpdateAbout(about);
             return RedirectToAction("Index", "About");
 
         }

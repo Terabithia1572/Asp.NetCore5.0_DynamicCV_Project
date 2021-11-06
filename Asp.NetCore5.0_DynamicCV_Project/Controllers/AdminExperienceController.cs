@@ -26,9 +26,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult ExperienceUpdate(Experience t)
+        public IActionResult ExperienceUpdate(Experience experience)
         {
-            em.Update(t);
+            em.Update(experience);
             return RedirectToAction("Index", "Experience");
         }
 
@@ -40,9 +40,9 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddExperience(Experience t)
+        public IActionResult AddExperience(Experience experience)
         {
-            em.Add(t);
+            em.Add(experience);
             return RedirectToAction("Index", "Experience");
         }
 

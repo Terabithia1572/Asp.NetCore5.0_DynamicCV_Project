@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules.FluentValidation;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,34 +14,51 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
     public class AdminAbilityController : Controller
     {
         AbilityManager abilityManager = new AbilityManager(new EfAbilityRepository());
+        AdminAbilityValidator validationRules = new AdminAbilityValidator();
         public IActionResult Index()
         {
-            var values = abilityManager.GetList();
-            return View(values);
+            var value = abilityManager.GetList();
+            return View(value);
         }
         [HttpGet]
-      public IActionResult UpdateAbility(int id)
+        public IActionResult AbilityUpdate(int id)
         {
-            var values = abilityManager.GetById(id);
-            return View(values);
+            var value = abilityManager.GetByID(id);
+            return View(value);
         }
+
         [HttpPost]
-        public IActionResult UpdateAbility(Ability t)
+        public IActionResult AbilityUpdate(Ability ability)
         {
-            abilityManager.Update(t);
+            abilityManager.AbilityUpdate(ability);
             return RedirectToAction("Index", "Ability");
         }
-        [HttpGet]
 
+        [HttpGet]
         public IActionResult AddAbility()
         {
+
             return View();
         }
+
         [HttpPost]
-        public IActionResult AddAbility(Ability t)
+        public IActionResult AddAbility(Ability ability)
         {
-            abilityManager.Add(t);
-            return RedirectToAction("Index", "Ability");
+            ValidationResult result = validationRules.Validate(ability);
+            if (result.IsValid)
+            {
+                abilityManager.AbilityAdd(ability);
+                return RedirectToAction("Index", "Ability");
+            }
+            else
+            {
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
 {
     [AllowAnonymous]
     public class LoginController : Controller
-    {    
+    {
         AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         Context c = new Context();
 
@@ -35,7 +35,7 @@ namespace Asp.NetCore5._0_DynamicCV_Project.Controllers
                 {
                     new Claim(ClaimTypes.Name,about.Mail)
                 };
-                var userIdentity = new ClaimsIdentity(claims, "a"); //a herhangi bir değer why?
+                var userIdentity = new ClaimsIdentity(claims, "a"); 
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(claimsPrincipal);
                 return RedirectToAction("AboutIndex", "Admin");
